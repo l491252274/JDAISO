@@ -1,0 +1,13 @@
+#Mon Nov 19 19:46:37 CST 2018
+eclipse.preferences.version=1
+encoding//doc/\u5B89\u88C5\u8BF4\u660E.txt=GBK
+encoding//src/main/java/com/unlimited/oj/dao/hibernate/GenericDaoHibernate.java=UTF-8
+encoding//src/main/java/com/unlimited/oj/dao/utils/BeanUtils.java=UTF-8
+encoding//src/main/java/com/unlimited/oj/model/User.java=UTF-8
+encoding//src/main/java/com/unlimited/oj/webapp/action/UserAction.java=UTF-8
+encoding//src/main/java/com/unlimited/oj/webapp/interceptor/RequestDelayInterceptor.java=UTF-8
+encoding//src/main/java/com/unlimited/oj/webapp/servlet/ValidateCodeServlet.java=UTF-8
+encoding//src/main/webapp/WEB-INF/pages/mainFrame.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/pages/mainMenu.jsp=UTF-8
+encoding//src/main/webapp/login.jsp=UTF-8
+encoding/<project>=UTF-8

@@ -1,0 +1,6 @@
+${message}
+
+Username: ${user.username}
+PKU Account: ${user.pkuAccount}
+Web Site: ${applicationURL}
+ActivateCode: ${code}

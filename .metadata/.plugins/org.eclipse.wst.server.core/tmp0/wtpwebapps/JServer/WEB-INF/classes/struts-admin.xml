@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Actions in this package will be prefixed with /admin/ -->
+    <package name="admin" extends="common" namespace="/admin">
+        <action name="welcome" class="com.unlimited.oj.webapp.action.WelcomeAction">
+            <result name="success">/WEB-INF/pages/admin/welcome.jsp</result>
+        </action>
+
+        <action name="activeUserList" class="com.opensymphony.xwork2.ActionSupport">
+            <result name="success">/WEB-INF/pages/admin/activeUserList.jsp</result>
+        </action>
+
+        <action name="flushCache" class="com.opensymphony.xwork2.ActionSupport">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/admin/flushCache.jsp</result>
+        </action>
+                
+        <action name="showAddBatchUsersForm" class="adminAction">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/admin/addBatchUsers.jsp</result>
+        </action>
+
+        <action name="showApplicationConfig" class="adminAction" method="showApplicationConfig">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/admin/applicationConfigForm.jsp</result>
+        </action>
+
+        <action name="updateApplicationConfig" class="adminAction" method="updateApplicationConfig">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/admin/applicationConfigForm.jsp</result>
+        </action>
+
+        <action name="ojTreeNodeList" class="ojTreeNodeAction" method="list">
+            <param name="auth_administrators">ROLE_ADMIN,ROLE_ADMIN_EXERCISE,ROLE_ADMIN_CONTEST</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/admin/ojTreeNodeList.jsp</result>
+            <result name="error">/WEB-INF/pages/admin/ojTreeNodeList.jsp</result>
+        </action>
+
+        <action name="editOjTreeNode" class="ojTreeNodeAction" method="edit">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <param name="auth_owners">ROLE_ADMIN_EXERCISE,ROLE_ADMIN_CONTEST,ROLE_CONTEST_HOLDER</param>
+            <param name="auth_objectIdKeyName">id</param>
+            <param name="auth_objectType">ojTreeNode</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="error">/WEB-INF/pages/admin/ojTreeNodeList.jsp</result>
+            <result name="success">/WEB-INF/pages/admin/ojTreeNodeForm.jsp</result>
+        </action>
+
+        <action name="deleteOjTreeNode" class="ojTreeNodeAction" method="delete">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <param name="auth_owners">ROLE_ADMIN_EXERCISE,ROLE_ADMIN_CONTEST,ROLE_CONTEST_HOLDER</param>
+            <param name="auth_objectIdKeyName">id</param>
+            <param name="auth_objectType">ojTreeNode</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="input">/WEB-INF/pages/admin/ojTreeNodeForm.jsp</result>
+            <result name="error">/WEB-INF/pages/admin/ojTreeNodeForm.jsp</result>
+            <result name="success" type="redirect-action">
+            	<param name="actionName">ojTreeNodeList</param>
+                <param name="pid">${ojTreeNode.pid}</param>
+            </result>
+        </action>
+
+        <action name="saveOjTreeNode" class="ojTreeNodeAction" method="save">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <param name="auth_owners">ROLE_ADMIN_EXERCISE,ROLE_ADMIN_CONTEST,ROLE_CONTEST_HOLDER</param>
+            <param name="auth_objectIdKeyName">id</param>
+            <param name="auth_objectType">ojTreeNode</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="input">/WEB-INF/pages/admin/ojTreeNodeForm.jsp</result>
+            <result name="error">/WEB-INF/pages/admin/ojTreeNodeForm.jsp</result>
+            <result name="success" type="redirect-action">
+            	<param name="actionName">ojTreeNodeList</param>
+                <param name="pid">${ojTreeNode.pid}</param>
+            </result>
+        </action>
+        
+        <action name="reload" class="com.unlimited.oj.webapp.action.ReloadAction">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <interceptor-ref name="userRightCheck"/>
+            <!-- this should never be used, it's here to prevent warnings -->
+            <result name="success">/WEB-INF/pages/mainMenu.jsp</result>
+        </action>
+
+        <action name="showLoginLog" class="adminAction" method="showLoginLog">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/admin/loginLogs.jsp</result>
+        </action>
+
+        <action name="deleteAllLoginLog" class="adminAction" method="deleteAllLoginLog">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/admin/loginLogs.jsp</result>
+        </action>
+
+        <action name="dumpAllLoginLog" class="adminAction" method="dumpAllLoginLog">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/common/downloadPage.jsp</result>
+        </action>
+
+    </package>
+</struts>

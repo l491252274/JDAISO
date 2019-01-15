@@ -1,0 +1,28 @@
+<decorators defaultdir="/decorators">
+    <excludes>
+        <pattern>/40*.jsp</pattern>
+        <pattern>/*ajax=true*</pattern>
+        <pattern>/scripts/dojo/*</pattern>
+        <pattern>/struts/dojo/*</pattern> 
+        <pattern>/resources/*</pattern>
+        <pattern>/*mainFrame.jsp*</pattern>
+        <pattern>/*header.jsp*</pattern>
+        <pattern>/*lefter.jsp*</pattern>
+        <pattern>/*footer.jsp*</pattern>
+        <pattern>/*mid_righter.jsp*</pattern>
+        <pattern>*user_exist_PUBLIC*</pattern>
+        <pattern>*menu_get_PUBLIC*</pattern>
+        <pattern>/*app*.jsp*</pattern>
+        <pattern>/login.jsp*</pattern>
+        <pattern>*menu_list_ADMIN.jsp*</pattern>
+        <pattern>*printer_print_ADMIN.jsp*</pattern>
+        <pattern>*printer_finish_ADMIN.jsp*</pattern>
+    </excludes> 
+    <decorator name="default" page="default.jsp">
+        <excludes>
+            <pattern>/login.jsp*</pattern>
+        	<pattern>*menu_list_ADMIN.jsp*</pattern>
+        </excludes>
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>

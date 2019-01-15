@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+       default-lazy-init="true">
+
+    <bean id="adminInterceptor" class="com.unlimited.oj.webapp.interceptor.UserRoleAuthorizationInterceptor">
+        <property name="auth_administrators" value="ROLE_ADMIN"/>
+    </bean>
+
+    <bean id="userRightCheckInterceptor" class="com.unlimited.oj.webapp.interceptor.UserRoleAuthorizationInterceptor">
+        
+    </bean>
+
+    <bean id="platformSecurityInterceptor" class="com.unlimited.oj.webapp.interceptor.PlatformSecurityInterceptor">
+    </bean>
+    
+    <bean id="requestDelayInterceptor" class="com.unlimited.oj.webapp.interceptor.RequestDelayInterceptor">
+        <property name="delay" value="10"/>
+        <property name="minInterval" value="1"/>
+        <property name="rushTimes" value="6"/>
+    </bean>
+    
+    <bean id="portalAction" class="com.unlimited.oj.webapp.action.PortalAction">
+    </bean>
+    
+    <bean id="passwordHintAction" class="com.unlimited.oj.webapp.action.PasswordHintAction" scope="prototype">
+        <property name="mailEngine" ref="mailEngine"/>
+        <property name="mailMessage" ref="mailMessage"/>
+    </bean>
+
+    <bean id="adminAction" class="com.unlimited.oj.webapp.action.AdminAction" scope="prototype">
+        <property name="userManager" ref="userManager"/>
+        <property name="roleManager" ref="roleManager"/>
+        <property name="loginLogManager" ref="loginLogManager"/>
+    </bean>
+
+    <bean id="commonAction" class="com.unlimited.oj.webapp.action.CommonAction" scope="prototype">
+        <property name="commonManager" ref="commonManager"/>
+    </bean>
+    
+    <bean id="signupAction" class="com.unlimited.oj.webapp.action.SignupAction" scope="prototype">
+        <property name="roleManager" ref="roleManager"/>
+        <property name="mailEngine" ref="mailEngine"/>
+        <property name="mailMessage" ref="mailMessage"/>
+        <property name="templateName" value="accountCreated.vm"/>
+    </bean>
+	
+    <bean id="userAction" class="com.unlimited.oj.webapp.action.UserAction" scope="prototype">
+   		<property name="userManager" ref="userManager"/>
+        <property name="roleManager" ref="roleManager"/>
+        <property name="mailEngine" ref="mailEngine"/>
+        <property name="mailMessage" ref="mailMessage"/>
+        <property name="passwordEncoder" ref="passwordEncoder"/>
+    </bean>
+    
+    <bean id="labAction" class="com.unlimited.webserver.webapp.action.LabAction" scope="prototype">
+   	<property name="labManager" ref="labManager"/>
+    </bean>
+
+     
+    <!--    ****************************************************     -->
+    
+    <bean id="appUserAction" class="com.unlimited.appserver.webapp.action.AppUserAction" scope="prototype">
+        <property name="appUserManager" ref="appUserManager"/>
+    </bean>
+    
+    
+    <bean id="appProblemAction" class="com.unlimited.appserver.webapp.action.AppProblemAction" scope="prototype">
+        <property name="appProblemTreeKeyStringManager" ref="appProblemTreeKeyStringManager"/>
+    </bean>
+    
+    <bean id="appCommonAction" class="com.unlimited.appserver.webapp.action.AppCommonAction" scope="prototype">
+    </bean>   
+
+</beans>

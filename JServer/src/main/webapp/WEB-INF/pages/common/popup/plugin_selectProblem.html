@@ -1,0 +1,27 @@
+<!-- Provide the function of popup window, select a problem
+Usage: include this file
+Need:wondowBox.js -->
+		<div id="selectProblemWindow" class='mesWindow'
+			style="z-index: 10001; visibility: visible; left: 100px; top: 10px; position: absolute; width: 100px; height: 100px;">
+			<div class='mesWindowTop' width='100%' height='40px'>
+				<table width='100%' height='100%'>
+					<tr>
+						<td id="wTitle">
+							Problem
+						</td>
+						<td style='width: 1px;'>
+							<input type='button' onclick='closeWindow("selectProblemWindow");'
+								class='close' value='Close' />
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class='mesWindowContent' id='popcontent' height='100px'>
+				<!------------------------- Begin -------------------------- -->
+				<iframe id="selectProblemWindowIframe" name="problemFrame"
+					src="selectProblem.html" marginwidth='1' marginheight='0'
+					height='300px' width='600px' border='0' frameborder='0'></iframe>
+				<!-- -----------------------END------------------------------- -->
+			</div>
+			<div width='100%' class='mesWindowBottom'></div>
+		</div>

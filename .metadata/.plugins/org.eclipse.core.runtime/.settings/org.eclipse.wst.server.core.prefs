@@ -1,0 +1,4 @@
+#Thu Oct 25 01:16:43 CST 2018
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<runtimes>\r\n  <runtime id\="Apache Tomcat v8.0" location\="C\:/Tomcat8" name\="Apache Tomcat v8.0" runtime-type-id\="org.eclipse.jst.server.tomcat.runtime.80" timestamp\="0"/>\r\n</runtimes>\r\n
+eclipse.preferences.version=1

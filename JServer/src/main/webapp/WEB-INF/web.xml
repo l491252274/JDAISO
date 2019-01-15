@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    
+    <display-name>Ulimited Joint Laboratory</display-name>
+    <distributable/>
+
+    <!-- precompiled jsp mappings -->
+
+    <!-- Project Name , It is use for such as, root of web, activeCode, path of web page-->
+    <context-param>
+        <param-name>project.name</param-name>
+        <param-value>JServer</param-value>
+    </context-param>
+
+    <!-- Define the default CSS Theme -->
+    <context-param>
+        <param-name>csstheme</param-name>
+        <param-value>andreas09</param-value>
+    </context-param>
+    <!-- Define the basename for a resource bundle for I18N -->
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>ApplicationResources</param-value>
+    </context-param>
+    <!-- Fallback locale if no bundles found for browser's preferred locale -->
+    <!-- Force a single locale using param-name 'javax.servlet.jsp.jstl.fmt.locale' -->
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.fallbackLocale</param-name>
+        <param-value>en</param-value>
+    </context-param>
+    <!-- Context Configuration locations for Spring XML files -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:/applicationContext-resources.xml
+            classpath:/applicationContext-dao*.xml
+            classpath:/applicationContext-judge*.xml
+            classpath:/applicationContext-service*.xml
+            /WEB-INF/applicationContext*.xml
+            /WEB-INF/security.xml
+        </param-value>
+    </context-param>
+
+    <!--filter>
+        <filter-name>clickstreamFilter</filter-name>
+        <filter-class>com.opensymphony.clickstream.ClickstreamFilter</filter-class>
+    </filter-->
+    
+    <!-- oscache configure
+    <filter>
+        <filter-name>cacheFilter</filter-name>
+        <filter-class>com.opensymphony.oscache.web.filter.CacheFilter</filter-class>
+        <init-param>
+                <param-name>time</param-name>
+                <param-value>180</param-value>
+        </init-param>
+    </filter>
+    -->
+
+    <!-- ehcache configure-->
+    <filter>
+        <filter-name>urlDistributeFilter</filter-name>
+        <filter-class>
+            com.unlimited.oj.webapp.filter.URLDistributeFilter
+        </filter-class>
+    </filter>
+    <filter>
+        <filter-name>pageCacheFilter</filter-name>
+        <filter-class>
+            com.unlimited.oj.webapp.filter.UojSimplePageCachingFilter
+        </filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>exportFilter</filter-name>
+        <filter-class>org.displaytag.filter.ResponseOverrideFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>gzipFilter</filter-name>
+        <filter-class>net.sf.ehcache.constructs.web.filter.GzipFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>lazyLoadingFilter</filter-name>
+        <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+        <init-param>
+            <param-name>singleSession</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <!-- Use "org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter" if you're using JPA -->
+    <filter>
+        <filter-name>localeFilter</filter-name>
+        <filter-class>com.unlimited.oj.webapp.filter.LocaleFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>rewriteFilter</filter-name>
+        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+        <init-param>
+            <param-name>logLevel</param-name>
+            <param-value>log4j</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>validatecodeFilter</filter-name>
+        <filter-class>com.unlimited.oj.webapp.filter.ValidateCodeFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>timerFilter</filter-name>
+        <filter-class>com.unlimited.oj.webapp.filter.TimerFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>securityFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetBeanName</param-name>
+            <param-value>springSecurityFilterChain</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>staticFilter</filter-name>
+        <filter-class>com.unlimited.oj.webapp.filter.StaticFilter</filter-class>
+        <init-param>
+            <param-name>includes</param-name>
+            <param-value>/scripts/dojo/*,/dwr/*</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>struts-cleanup</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
+    </filter>
+    <filter>
+        <filter-name>struts</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+    </filter>
+    <filter>
+        <filter-name>sitemesh</filter-name>
+        <filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>timerFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>validatecodeFilter</filter-name>
+        <url-pattern>/j_security_check</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>securityFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping> 
+    <!-- Commented out for 2 reasons: 1) it's a pain when developing JSPs, and
+                                      2) it causes the Signup webtest to fail -->
+
+    <filter-mapping>
+        <filter-name>urlDistributeFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>pageCacheFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>lazyLoadingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!--filter-mapping>
+        <filter-name>clickstreamFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping-->
+    <filter-mapping>
+        <filter-name>localeFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- GZipFilter has issues with XFire's service-listing servlet. -->
+    <!-- http://issues.appfuse.org/browse/APF-863 -->
+    <filter-mapping>
+        <filter-name>gzipFilter</filter-name>
+        <url-pattern>*.css</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>gzipFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>gzipFilter</filter-name>
+        <url-pattern>*.js</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>gzipFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>exportFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>rewriteFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>struts-cleanup</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>staticFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>struts</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>sitemesh</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+    </filter-mapping>
+    
+    <!--listener>
+        <listener-class>com.opensymphony.clickstream.ClickstreamListener</listener-class>
+    </listener-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.unlimited.oj.webapp.listener.StartupListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.unlimited.oj.webapp.listener.UserCounterListener</listener-class>
+    </listener>
+    <!-- 
+    <listener>
+        <listener-class>net.sf.navigator.menu.MenuContextListener</listener-class>
+    </listener>
+     -->
+    <!-- Initializing judge-dispatcher -->
+    <!-- Start standard board detector-->
+<!-- 
+    <listener>
+        <listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
+    </listener>
+ -->
+    <servlet>
+        <servlet-name>dwr-invoker</servlet-name>
+        <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>xfire</servlet-name>
+        <servlet-class>org.codehaus.xfire.spring.XFireSpringServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ValidateCodeServlet</servlet-name>
+        <servlet-class>com.unlimited.oj.webapp.servlet.ValidateCodeServlet</servlet-class>
+    </servlet>
+<!-- 
+    <servlet>
+        <servlet-name>UserManagerImpl</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+ -->
+    <servlet-mapping>
+        <servlet-name>dwr-invoker</servlet-name>
+        <url-pattern>/dwr/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>xfire</servlet-name>
+        <url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ValidateCodeServlet</servlet-name>
+        <url-pattern>/ValidateCodeServlet</url-pattern>
+    </servlet-mapping>
+<!-- 
+    <servlet-mapping>
+        <servlet-name>UserManagerImpl</servlet-name>
+        <url-pattern>/UserManagerImpl</url-pattern>
+    </servlet-mapping>
+ -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>400</error-code>
+        <location>/index.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/403.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+</web-app>

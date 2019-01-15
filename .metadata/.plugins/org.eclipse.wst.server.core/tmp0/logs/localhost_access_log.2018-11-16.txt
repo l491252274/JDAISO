@@ -1,0 +1,9 @@
+127.0.0.1 - - [16/Nov/2018:00:52:23 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [16/Nov/2018:00:52:26 +0800] "GET /JServer/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [16/Nov/2018:00:52:26 +0800] "GET /JServer/mainMenu.html;jsessionid=DA1530EC644168FF9965C971FB0864BF HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [16/Nov/2018:00:52:27 +0800] "GET /JServer/login.jsp HTTP/1.1" 200 4961
+0:0:0:0:0:0:0:1 - - [16/Nov/2018:00:52:27 +0800] "GET /JServer/style/authority/login_css.css HTTP/1.1" 200 647
+0:0:0:0:0:0:0:1 - - [16/Nov/2018:00:52:27 +0800] "GET /JServer/scripts/vkboard/vkboard.js HTTP/1.1" 200 11947
+0:0:0:0:0:0:0:1 - - [16/Nov/2018:00:52:27 +0800] "GET /JServer/scripts/jquery/jquery-1.7.1.js HTTP/1.1" 200 73197
+0:0:0:0:0:0:0:1 - - [16/Nov/2018:00:52:27 +0800] "GET /JServer/images/login/login_blank.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Nov/2018:00:52:27 +0800] "GET /favicon.ico HTTP/1.1" 404 1016

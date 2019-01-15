@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuConfig>
+    <Displayers>
+        <Displayer name="Velocity" type="net.sf.navigator.displayer.VelocityMenuDisplayer"/>
+    </Displayers>
+    <Menus>
+        <Menu name="UserMenu" title="menu.user" description="User Menu" page="/lefter.html?menu=UserMenu" roles="ROLE_ADMIN,ROLE_USER">
+            <Item name="UserEditProfile" title="menu.user.editProfile" page="/user_user_editProfile_PUBLIC.html?submenu=UserEditProfile" roles="ROLE_ADMIN,ROLE_USER"/>
+            <Item name="UserListManager" title="menu.admin.userlistmanager" page="/user_user_listBySearch_ADMIN.html?submenu=UserListManager" roles="ROLE_ADMIN"/>
+        </Menu>
+        <Menu name="AdminMenu" title="menu.admin" description="Admin Menu" roles="ROLE_ADMIN" width="200" page="/lefter.html?menu=AdminMenu">
+            <Item name="AdminAddBatchUsers" title="menu.admin.addBatchUsers" page="/user_user_addBatch_ADMIN.html?submenu=AdminAddBatchUsers"/>
+            <Item name="AdminActiveUserList" title="menu.admin.activeUserList" page="/user_user_listActiveUser_ADMIN.html?submenu=AdminActiveUserList"/>
+            <Item name="AdminApplicationConfigue" title="menu.admin.applicationConfigue" page="/admin_applicationConfig_edit_ADMIN.html?submenu=AdminApplicationConfigue"/>
+            <Item name="AdminShowLoginLogs" title="menu.admin.showLoginLogs" page="/admin_loginLog_list_ADMIN.html?submenu=AdminShowLoginLogs"/>
+        </Menu>
+        <Menu name="Logout" title="user.logout" page="/logout.jsp" roles="ROLE_ADMIN,ROLE_USER" target="_top">
+            <Item name="TestItem" title="menu.checkie" page="/index.jsp">
+	            <Item name="FlushCache" title="menu.flushCache" page="/admin/flushCache.html"/>
+            </Item>
+        </Menu>
+    </Menus>
+</MenuConfig>

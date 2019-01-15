@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Actions in this package will be prefixed with /common/ -->
+    <package name="common" extends="default" namespace="/common">
+ 
+<!-- common [User] actions here -->
+
+        <action name="userList" class="userAction" method="list">
+            <result name="success">/WEB-INF/pages/common/userList.jsp</result>
+        </action>
+
+        <action name="userListBySearch" class="userAction" method="listBySearch">
+            <param name="auth_administrators">ROLE_ADMIN,ROLE_ADMIN_EXERCISE,ROLE_ADMIN_CONTEST</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/common/userListManager.jsp</result>
+        </action>
+
+        <action name="userListManager" class="userAction" method="list">
+            <param name="auth_administrators">ROLE_ADMIN,ROLE_ADMIN_EXERCISE,ROLE_ADMIN_CONTEST</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/common/userListManager.jsp</result>
+        </action>
+
+        <action name="editUser" class="userAction" method="edit">
+            <param name="auth_administrators">ROLE_ADMIN,ROLE_ADMIN_EXERCISE,ROLE_ADMIN_CONTEST</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/common/userForm.jsp</result>
+            <result name="error">/WEB-INF/pages/mainPage.jsp</result>
+            <result name="input">/WEB-INF/pages/common/userForm.jsp</result>
+        </action>
+        
+        <action name="viewUser" class="userAction" method="view">
+            <result name="success">/WEB-INF/pages/common/user.jsp</result>
+            <result name="input">/WEB-INF/pages/mainMenu.jsp</result>
+        </action>
+        
+        <action name="activatePKUAccount" class="userAction" method="activatePKUAccount">
+            <result name="error">/WEB-INF/pages/mainMenu.jsp</result>
+            <result name="success">/WEB-INF/pages/mainMenu.jsp</result>
+        </action>
+        
+        <action name="mailPKUAccountCode" class="userAction" method="mailPKUAccountCode">
+            <result name="error">/WEB-INF/pages/mainMenu.jsp</result>
+            <result name="success">/WEB-INF/pages/mainMenu.jsp</result>
+        </action>
+
+        <action name="deleteDownloadFiles" class="portalAction" method="deleteDownloadFiles">
+            <result name="success">/WEB-INF/pages/mainMenu.jsp</result>
+        </action>
+
+
+    </package>
+</struts>

@@ -1,0 +1,88 @@
+/*body {
+	font-size:12px;
+	font-family:'Lucida Grande','Lucida Sans Unicode','宋体',arial,verdana,sans-serif;
+}
+input,select{
+	border:1px solid #369;
+	font-size:12px;
+	margin:0 5px;
+}
+
+这一行会使list页面的复选框变大
+input {
+	width:180px;
+}
+*/
+input.jcalendar {
+	border:1px solid #369;
+	font-size:12px;
+	margin:0 5px;
+	width:180px;
+}
+fieldset {
+	margin:5px;
+	padding:0 12px 12px 12px;
+	border:1px solid #D4D4D4;
+	background-color:#F9F9F9;
+}
+legend {
+	font-weight:bold;
+	font-family:'Lucida Grande','Lucida Sans Unicode','宋体',arial,verdana,sans-serif;
+	font-size: 12px;
+}
+.center {
+	text-align:center;
+}
+.red {
+	color:#F00;
+}
+/**********������ʽ��ʼ********************/
+#calendar_container {
+	width:160px;
+	border:1px solid #06C;
+}
+#calendar {
+	border-collapse:collapse;
+	background-color:#FFF;
+	width:160px;
+	height:120px;
+	margin:0px auto;
+	cursor:default;
+}
+#calendar td {
+	text-align:center;
+	vertical-align:middle;
+	font-size:12px;
+	font-family:'Lucida Grande','Lucida Sans Unicode','宋体',arial,verdana,sans-serif;
+}
+#calendar thead {
+	background-color:#999;
+	color:#FFF;
+	font-size:12px;
+	font-family:'Lucida Grande','Lucida Sans Unicode','宋体',arial,verdana,sans-serif;
+}
+#calendar caption {
+	background-color:#06C;
+}
+#calendar a{
+	color:#F90;
+	margin:0 5px;
+	text-decoration:none;
+	font-size:12px;
+	font-family:'Lucida Grande','Lucida Sans Unicode','宋体',arial,verdana,sans-serif;
+}
+#calendar #prev_month,#calendar #next_month {
+	margin:0;
+	font-size:12px;
+	font-family:'Lucida Grande','Lucida Sans Unicode','宋体',arial,verdana,sans-serif;
+}
+#calendar #c_today {
+	background-color:#036;
+	color:#FFF;
+}
+#calendar .over {
+	background-color:#CCC;
+}
+#calendar .keydate {
+	color:#06F;
+}

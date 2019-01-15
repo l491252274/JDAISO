@@ -1,0 +1,9 @@
+运行要求：
+Tomcat
+Mysql
+
+开发要求：
+eclipse
+
+管理员admin
+密码admin

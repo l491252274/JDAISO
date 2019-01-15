@@ -1,0 +1,226 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"WTF: null part?!?",1542604907348
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542604907426
+activated,view,org.eclipse.ui.navigator.resources,3.4.201.M20100707-0800,"org.eclipse.ui.navigator.ProjectExplorer",1542604913759
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542604914087
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542604937473
+activated,view,org.eclipse.ui.navigator.resources,3.4.201.M20100707-0800,"org.eclipse.ui.navigator.ProjectExplorer",1542604942153
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542604947102
+closed,editor,org.eclipse.jst.jsp.ui,1.1.504.v201103231819,"org.eclipse.jst.jsp.core.jspsource.source",1542605013703
+opened,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542605013843
+error,log,,,"WTF: null part?!?",1542605013859
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542605017151
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542605055732
+started,bundle,org.eclipse.pde.launching,3.6.0.v20100601,"org.eclipse.pde.launching",1542605060568
+started,bundle,org.eclipse.ui.views.log,1.0.100.v20100423,"org.eclipse.ui.views.log",1542605060599
+started,bundle,org.eclipse.pde.ui,3.6.1.v20100810_r361,"org.eclipse.pde.ui",1542605060614
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605060755
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605067447
+executed,command,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.openSearchDialog",1542605067478
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605068354
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605070210
+opened,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542605080725
+error,log,,,"WTF: null part?!?",1542605080725
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542605080818
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605116934
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605117184
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542605184782
+activated,editor,org.eclipse.jst.jsp.ui,1.1.504.v201103231819,"org.eclipse.jst.jsp.core.jspsource.source",1542605185687
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605202363
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605202597
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605347736
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605353687
+activated,view,org.eclipse.ui.navigator.resources,3.4.201.M20100707-0800,"org.eclipse.ui.navigator.ProjectExplorer",1542605356885
+opened,editor,org.eclipse.jst.jsp.ui,1.1.504.v201103231819,"org.eclipse.jst.jsp.core.jspsource.source",1542605369599
+activated,editor,org.eclipse.jst.jsp.ui,1.1.504.v201103231819,"org.eclipse.jst.jsp.core.jspsource.source",1542605369692
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605425177
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605438533
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.saveAll",1542605521272
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605522732
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605526964
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.undo",1542605529984
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.file.saveAll",1542605533592
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605534157
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605537312
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605686404
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605686607
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605686778
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605686950
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605687122
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605687371
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605687621
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605720837
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605721040
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605721230
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605723774
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.paste",1542605725397
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542605727783
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605727846
+executed,command,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.openSearchDialog",1542605727877
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605728314
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542605730357
+opened,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542605771387
+error,log,,,"WTF: null part?!?",1542605771387
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542605771512
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542605771590
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542605785725
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605838486
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542605838705
+activated,view,org.eclipse.ui.navigator.resources,3.4.201.M20100707-0800,"org.eclipse.ui.navigator.ProjectExplorer",1542605939317
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542606097591
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542606099697
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542606099915
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542606107559
+activated,view,org.eclipse.ui.navigator.resources,3.4.201.M20100707-0800,"org.eclipse.ui.navigator.ProjectExplorer",1542606123925
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542606138027
+opened,editor,org.eclipse.jdt.ui,3.6.1.r361_v20100825-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1542606138355
+activated,editor,org.eclipse.jdt.ui,3.6.1.r361_v20100825-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1542606155096
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542606190090
+activated,editor,org.eclipse.jdt.ui,3.6.1.r361_v20100825-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1542606244227
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542606249125
+activated,editor,org.eclipse.jdt.ui,3.6.1.r361_v20100825-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1542606250997
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542606258470
+activated,editor,org.eclipse.jdt.ui,3.6.1.r361_v20100825-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1542606286272
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617212549
+activated,editor,org.eclipse.jst.jsp.ui,1.1.504.v201103231819,"org.eclipse.jst.jsp.core.jspsource.source",1542617245684
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617263453
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617295278
+activated,editor,org.eclipse.jst.jsp.ui,1.1.504.v201103231819,"org.eclipse.jst.jsp.core.jspsource.source",1542617298928
+executed,command,org.eclipse.wst.sse.ui,1.2.4.v201103231819,"org.eclipse.wst.sse.ui.open.file.from.source",1542617304451
+opened,view,org.eclipse.jdt.ui,3.6.1.r361_v20100825-0800,"org.eclipse.jdt.ui.PackageExplorer",1542617313468
+activated,view,org.eclipse.jdt.ui,3.6.1.r361_v20100825-0800,"org.eclipse.jdt.ui.PackageExplorer",1542617313561
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542617313577
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542617314934
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.navigate.showIn",1542617314965
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617316152
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617317056
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617317745
+activated,editor,org.eclipse.jst.jsp.ui,1.1.504.v201103231819,"org.eclipse.jst.jsp.core.jspsource.source",1542617323502
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330600
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+no handler,command,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui.commands.ForceReturn",1542617330615
+executed,command,org.eclipse.wst.sse.ui,1.2.4.v201103231819,"org.eclipse.wst.sse.ui.format.document",1542617334047
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542617336185
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542617336403
+executed,command,org.eclipse.ui,3.6.1.M20100826-1330,"org.eclipse.ui.edit.copy",1542617336543
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542617343095
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542617346465
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542617346527
+executed,command,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.openSearchDialog",1542617346574
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542617347073
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542617349367
+activated,editor,org.eclipse.jdt.ui,3.6.1.r361_v20100825-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1542617390428
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542617427556
+closed,editor,org.eclipse.jdt.ui,3.6.1.r361_v20100825-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1542617436076
+opened,editor,jp.gr.java_conf.ussiy.app.propedit,5.3.5,"jp.gr.java_conf.ussiy.app.propedit.editors.PropertiesEditor",1542617436341
+activated,editor,jp.gr.java_conf.ussiy.app.propedit,5.3.5,"jp.gr.java_conf.ussiy.app.propedit.editors.PropertiesEditor",1542617439476
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542617454328
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617463220
+activated,editor,org.eclipse.jst.jsp.ui,1.1.504.v201103231819,"org.eclipse.jst.jsp.core.jspsource.source",1542617480193
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617517636
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542617565219
+closed,editor,jp.gr.java_conf.ussiy.app.propedit,5.3.5,"jp.gr.java_conf.ussiy.app.propedit.editors.PropertiesEditor",1542617569789
+opened,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617569930
+error,log,,,"WTF: null part?!?",1542617569930
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617571162
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542617582207
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617583845
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542617588665
+opened,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617593189
+error,log,,,"WTF: null part?!?",1542617593189
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617593299
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617601068
+closed,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617601083
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617602674
+closed,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617602674
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617603688
+activated,editor,org.eclipse.jst.jsp.ui,1.1.504.v201103231819,"org.eclipse.jst.jsp.core.jspsource.source",1542617604531
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617626262
+activated,editor,org.eclipse.jst.jsp.ui,1.1.504.v201103231819,"org.eclipse.jst.jsp.core.jspsource.source",1542617644969
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617664578
+activated,view,org.eclipse.ui.navigator.resources,3.4.201.M20100707-0800,"org.eclipse.ui.navigator.ProjectExplorer",1542617741598
+activated,editor,org.eclipse.wst.xml.ui,1.1.104.v201103021532,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1542617767058
+activated,view,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search.ui.views.SearchView",1542617771800
+opened,editor,org.eclipse.jdt.ui,3.6.1.r361_v20100825-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1542617774795
+deactivated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542617794531
+activated,workbench,org.eclipse.ui.workbench,3.6.1.M20100826-1330,"",1542617798962

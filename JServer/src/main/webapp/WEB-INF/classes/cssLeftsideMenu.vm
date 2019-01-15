@@ -1,0 +1,16 @@
+#macro( displayCssMenu $menu )
+  #if ($displayer.isAllowed($menu))
+      #foreach ($menuItem in $menu.components)
+        #if ($displayer.isAllowed($menuItem))
+          #set ($title = $displayer.getMessage($menuItem.title))
+	        #if ($menuItem.name == $currentSubmenu)
+          		<a class="nav active" href="$menuItem.url" title="$title" #if($menuItem.target)target="$menuItem.target"#end>${title}</a>
+          	#else
+          		<a class="nav" href="$menuItem.url" title="$title" #if($menuItem.target)target="$menuItem.target"#end>${title}</a>
+          	#end
+        #end
+      #end
+  #end
+#end
+
+#displayCssMenu($menu)

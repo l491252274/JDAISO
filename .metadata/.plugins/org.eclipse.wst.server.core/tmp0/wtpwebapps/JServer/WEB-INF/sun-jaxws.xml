@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint implementation="com.unlimited.oj.service.impl.UserManagerImpl" name="UserManagerImpl" url-pattern="/UserManagerImpl"/>
+  <endpoint implementation="com.unlimited.oj.service.impl.HeroBoardManagerImpl" name="HeroBoardManagerImpl" url-pattern="/HeroBoardManagerImpl"/>
+</endpoints>

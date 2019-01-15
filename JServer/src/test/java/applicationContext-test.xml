@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ApplicationContext Configuration File -->
+<!-- Author: develop -->
+
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.sybase.jdbc2.jdbc.SybDriver">
+		</property>
+		<property name="url"
+			value="jdbc:sybase:Tds:localhost:5000/master">
+		</property>
+		<property name="username" value=""></property>
+		<property name="password" value=""></property>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="annotatedClasses">
+			<list>
+                 <value>com.trisun.m2m.model.Task</value>
+			</list>
+		</property>
+  		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					
+				</prop>
+<!--
+				<prop key="hibernate.dialect">
+               org.hibernate.dialect.Oracle10gDialect
+				</prop>
+-->
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.jdbc.fetch_size">10</prop>
+				<prop key="hibernate.jdbc.batch_size">10</prop>
+				<prop key="hibernate.cache.provider_class">
+					org.hibernate.cache.HashtableCacheProvider
+				</prop>
+			</props>
+		</property>
+	</bean>
+   
+    <!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+   <!-- DAO Configure-->
+	<bean id="taskDao" class="com.trisun.m2m.dao.hibernate.TaskDaoHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+
+   
+</beans>

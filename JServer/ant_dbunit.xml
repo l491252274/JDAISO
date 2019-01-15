@@ -1,0 +1,53 @@
+<project name="uojappserver" default="export" basedir=".">
+   <taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask"><classpath><pathelement location="dbunit-2.2.jar"/></classpath></taskdef>
+   <target name="export">
+     <dbunit driver="com.mysql.jdbc.Driver"  url="jdbc:mysql://localhost:3306/uoj?characterEncoding=utf-8"  
+                userid="root"  password=""   supportBatchStatement="true" datatypeFactory="org.dbunit.ext.mysql.MySqlDataTypeFactory">
+        <classpath><pathelement location="D:\workspace\uoj\src\main\webapp\WEB-INF\lib\mysql-connector-java-5.0.5.jar"/></classpath>
+        <export dest="dataFile.xml">
+     		<table name="Roles"/>
+     		<table name="Users"/>
+     		<table name="Additive_Code"/>
+     		<table name="Answer_Code"/>
+     		<table name="Test_Data_Code"/>
+     		<table name="Solution_Tip"/>
+     		<table name="Compile_Info"/>
+     		<table name="Source_Code"/>
+     		<table name="Contest"/>
+     		<table name="Exam_Score"/>
+     		<table name="Exam_Attend"/>
+     		<table name="Login_Log"/>
+     		<table name="Mail"/>
+     		<table name="Message"/>
+     		<table name="News"/>
+     		<table name="Problem"/>
+     		<table name="Contest_Attend"/>
+     		<table name="Users_vs_Roles"/>
+     		<table name="Problem_Case"/>
+     		<table name="Solution"/>
+     		<table name="Contest_Problem"/>
+     		<table name="Contest_Score"/>
+        </export>
+     </dbunit>
+     <java classname="ExportDataFileCheck">
+ 	     <arg value="dataFile.xml"/>
+        <classpath>
+           <pathelement path="."/>
+        </classpath>
+     </java>
+   </target>
+   <target name="update">
+     <dbunit driver="com.mysql.jdbc.Driver"  url="jdbc:mysql://localhost:3306/uoj?characterEncoding=utf-8"  
+                userid="root"  password=""   supportBatchStatement="true" datatypeFactory="org.dbunit.ext.mysql.MySqlDataTypeFactory">
+        <classpath><pathelement location="D:\workspace\uoj\src\main\webapp\WEB-INF\lib\mysql-connector-java-5.0.5.jar"/></classpath>
+	     <operation type="UPDATE" src="updateFile.xml"/>
+     </dbunit>
+   </target>
+   <target name="install">
+      <dbunit driver="com.mysql.jdbc.Driver"  url="jdbc:mysql://localhost:3306/uoj?characterEncoding=utf-8"  
+                userid="root"  password=""   supportBatchStatement="true" datatypeFactory="org.dbunit.ext.mysql.MySqlDataTypeFactory">
+        <classpath><pathelement location="D:\workspace\uoj\src\main\webapp\WEB-INF\lib\mysql-connector-java-5.0.5.jar"/></classpath>
+	     <operation type="CLEAN_INSERT" src="dataFile.xml"/>
+     </dbunit>
+   </target>
+</project>

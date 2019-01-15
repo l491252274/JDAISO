@@ -1,0 +1,4 @@
+Username: ${user.username}
+
+${message}
+Active Your Account: ${applicationURL}

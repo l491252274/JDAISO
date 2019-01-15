@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Actions in this package will be prefixed with /common/ -->
+    <package name="common" extends="default" namespace="/common">
+ 
+        <action name="deleteDownloadFiles" class="portalAction" method="deleteDownloadFiles">
+            <result name="success">/WEB-INF/pages/mainMenu.jsp</result>
+        </action>
+
+
+    </package>
+</struts>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.unlimited.appserver.dao.LabDao"/>
+<fullyQualifiedTypeName name="com.unlimited.oj.dao.LabDao"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="com.unlimited.oj.service.LabManager"/>
+<fullyQualifiedTypeName name="com.unlimited.appserver.model.Lab"/>
+<fullyQualifiedTypeName name="com.unlimited.oj.model.Lab"/>
+</qualifiedTypeNameHistroy>

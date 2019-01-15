@@ -1,0 +1,146 @@
+package com.unlimited.webserver.model;
+
+/***********************************************************************
+ * Module:  Lab.java
+ * Author:  Administrator
+ * Purpose: Defines the Class Lab
+ ***********************************************************************/
+
+
+import javax.persistence.*;
+import com.unlimited.appserver.model.*;
+import java.util.*;
+
+@Entity(name="Lab")
+@Table(name="lab",
+   uniqueConstraints={
+      @UniqueConstraint(columnNames={"roomid"}),
+      @UniqueConstraint(columnNames={"roomid"})
+   }
+)
+public class Lab implements java.io.Serializable {
+   public long id;
+   public java.lang.String roomid = "";
+   public java.lang.String floor;
+   
+   /**
+    * Empty constructor which is required by EJB 3.0 spec.
+    *
+    */
+   public Lab() {
+      // TODO Add your own initialization code here.
+   }
+   
+   /**
+    * Get value of id
+    *
+    * @return id 
+    */
+   @Id
+   //@GeneratedValue(strategy=GenerationType.IDENTITY)
+   @Column(name="id", nullable=false, insertable=true, updatable=true)
+   public java.lang.Long getId()
+   {
+      return id;
+   }
+  
+   /**
+    * Set value of id
+    *
+    * @param newId 
+    */
+   public void setId(long newId)
+   {
+      this.id = newId;
+   }
+   
+   /**
+    * Get value of roomid
+    *
+    * @return roomid 
+    */
+   @Basic(optional=false)
+   @Column(name="roomid", nullable=false, insertable=true, updatable=true, length=20)
+   public java.lang.String getRoomid()
+   {
+      return roomid;
+   }
+   
+   /**
+    * Set value of roomid
+    *
+    * @param newRoomid 
+    */
+   public void setRoomid(java.lang.String newRoomid)
+   {
+      this.roomid = newRoomid;
+   }
+   
+   /**
+    * Get value of floor
+    *
+    * @return floor 
+    */
+   @Basic(optional=true)
+   @Column(name="floor", insertable=true, updatable=true, length=40)
+   public java.lang.String getFloor()
+   {
+      return floor;
+   }
+   
+   /**
+    * Set value of floor
+    *
+    * @param newFloor 
+    */
+   public void setFloor(java.lang.String newFloor)
+   {
+      this.floor = newFloor;
+   }
+   
+   /* (non-Javadoc)
+    * @see java.lang.Object#equals(java.lang.Object)
+    */
+   public boolean equals(Object other) {
+   
+      if (other == null)
+         return false;
+      
+      if (other == this)
+         return true;   
+   
+      if (!(other instanceof Lab))
+         return false;
+   
+      Lab cast = (Lab) other;
+   
+      
+
+      return true;
+   }
+   
+   /* (non-Javadoc)
+    * @see java.lang.Object#hashCode()
+    */
+   public int hashCode() {
+      int hashCode = 0;
+      if (this.roomid != null) 
+         hashCode = 29 * hashCode + roomid.hashCode();
+      if (this.floor != null) 
+         hashCode = 29 * hashCode + floor.hashCode();
+      return hashCode;
+   }
+   
+   /* (non-Javadoc)
+    * @see java.lang.Object#toString()
+    */
+   public String toString() {
+      StringBuffer ret = new StringBuffer();
+      ret.append( "Lab: " );
+      ret.append( "id='" + id + "'");
+      ret.append( "roomid='" + roomid + "'");
+      ret.append( "floor='" + floor + "'");
+      return ret.toString();
+   }
+
+}

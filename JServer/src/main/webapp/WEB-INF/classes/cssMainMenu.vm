@@ -1,0 +1,16 @@
+#macro( displayCssMenu $menu )
+  #if ($displayer.isAllowed($menu))
+      ## set menu title
+      #set ($title = $displayer.getMessage($menu.title))
+
+      #if (!$menu.parent) 
+        #if ($menu.name == $currentMenu)
+<li><a class="current" href="$menu.url" title="$title" #if($menu.target)target="$menu.target"#end>${title}</a></li>
+        #else
+<li><a href="$menu.url" title="$title" #if($menu.target)target="$menu.target"#end>${title}</a></li>
+        #end
+      #end
+  #end
+#end
+
+#displayCssMenu($menu)

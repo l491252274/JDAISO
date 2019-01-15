@@ -1,0 +1,11 @@
+<project name="uojappserver" default="transform" basedir=".">
+   <target name="transform" depends="clean">
+	<native2ascii encoding="UTF-8" src="src/main/resources" dest="src/main/webapp/WEB-INF/classes"
+   	includes="**/ApplicationResources_zh*.properties, **/displaytag_zh*.properties, **/errors_zh*.properties"/>
+   </target>
+  <target name="clean" description="clean up" >
+    <delete>
+      <fileset dir="src/main/webapp/WEB-INF/classes" includes="**/ApplicationResources_zh*.properties, **/displaytag_zh*.properties, **/errors_zh*.properties"/>
+    </delete>
+  </target>
+</project>

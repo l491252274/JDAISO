@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd">
+    
+    <!-- For mail settings and future properties files -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:jdbc.properties</value>
+                <value>classpath:mail.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- JNDI DataSource for J2EE environments -->
+    <!--<jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/appfuse"/>-->
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="maxActive" value="20"/>
+        <property name="maxIdle" value="10"/>
+        <property name="maxWait" value="100"/>
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="defaultAutoCommit" value="true"/>
+        <property name="removeAbandoned" value="false"/>
+        <property name="removeAbandonedTimeout" value="30"/>
+        <property name="logAbandoned" value="false"/>
+     </bean>
+
+        <!-- Hibernate SessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
+        <property name="lobHandler" ref="lobHandler"/>
+        <property name="hibernateProperties">
+              <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.query.substitutions">true 'Y', false 'N'</prop>
+                <!--add ehcache-->
+                <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+                <prop key="hibernate.cache.use_second_level_cache">true</prop>
+                <prop key="hibernate.cache.use_query_cache">true</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <!-- Turn batching off for better error messages under PostgreSQL -->
+                <prop key="hibernate.jdbc.batch_size">25</prop>
+            </props>
+<!--
+            <value>
+            	hibernate.show_sql=false
+                hibernate.dialect=${hibernate.dialect}
+                hibernate.query.substitutions=true 'Y', false 'N'
+                hibernate.jdbc.batch_size=10
+                hibernate.cache.use_second_level_cache=true
+                hibernate.cache.use_query_cache=true
+                hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+            </value>
+-->
+            <!-- Turn batching off for better error messages under PostgreSQL -->
+            <!-- hibernate.jdbc.batch_size=0 -->
+        </property>
+    </bean>
+
+    <!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="lobHandler" lazy-init="true"
+          class="org.springframework.jdbc.support.lob.DefaultLobHandler"/>
+
+    <!-- If you want to be able to do simple CRUD for new domain objects without
+        having to cast, you don't have create a Dao interface and implementation
+        for that domain object, you simply have to do the following.
+
+        eg... 'fooDao'
+
+    <bean id="fooDao" class="com.unlimited.oj.dao.hibernate.GenericDaoHibernate">
+        <constructor-arg value="com.unlimited.oj.model.Foo"/>
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    You will need to create a Dao interface and implementation for that
+        domain object if you need more than simple CRUD to occur.
+        (finders, bulk update/delete, etc.)
+    -->
+</beans>

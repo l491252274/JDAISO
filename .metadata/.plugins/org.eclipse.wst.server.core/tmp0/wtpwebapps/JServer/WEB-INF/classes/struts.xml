@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Constants -->
+    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.action.extension" value="html"/>
+    <constant name="struts.objectFactory" value="spring"/>
+    <constant name="struts.custom.i18n.resources" value="ApplicationResources,errors"/>
+    <!-- Upload Size Limit or Post Max Size -->
+    <constant name="struts.multipart.maxSize" value="8388608"/>
+    <constant name="struts.ui.theme" value="css_xhtml"/>
+    <constant name="struts.codebehind.pathPrefix" value="/WEB-INF/pages/"/>
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <interceptors>
+            <!-- Interceptor to handle allowing only admins to certain actions -->
+            <interceptor name="userRightAllowedOnly" class="userRightCheckInterceptor"/>
+            <!-- Interceptor to handle request delay to certain actions -->
+            <!-- <interceptor name="requestDelay" class="requestDelayInterceptor"/> -->
+            <interceptor name="platformSecurityCheck" class="platformSecurityInterceptor"/>
+            <!-- Copied from struts-default.xml and changed validation exclude methods -->
+            <interceptor-stack name="defaultStack">
+                <!-- <interceptor-ref name="requestDelay"/> -->
+                <interceptor-ref name="exception"/>
+                <interceptor-ref name="alias"/>
+                <interceptor-ref name="servlet-config"/>
+                <interceptor-ref name="prepare"/>
+                <interceptor-ref name="i18n"/>
+                <interceptor-ref name="chain"/>
+                <interceptor-ref name="debugging"/>
+                <interceptor-ref name="profiling"/>
+                <interceptor-ref name="scoped-model-driven"/>
+                <interceptor-ref name="model-driven"/>
+                <interceptor-ref name="fileUpload"/>
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="static-params"/>
+                <interceptor-ref name="params">
+                    <param name="excludeParams">dojo\..*</param>
+                </interceptor-ref>
+                <interceptor-ref name="conversionError"/>
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">cancel,execute,delete,edit,list,view,registerPKUAccount,mailPKUAccountCode,activatePKUAccount</param>
+                </interceptor-ref>
+                <interceptor-ref name="workflow">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+            </interceptor-stack>
+            <interceptor-stack name="fileUploadStack">
+                <interceptor-ref name="fileUpload"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+            <interceptor-stack name="userRightCheck">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="userRightAllowedOnly"/>
+            </interceptor-stack>
+            <interceptor-stack name="requestDelayCheck">
+                <interceptor-ref name="defaultStack"/>
+                <!-- <interceptor-ref name="requestDelay"/> -->
+            </interceptor-stack>
+        </interceptors>
+
+        <global-results>
+            <result name="appReturn">/WEB-INF/pages/appReturn.jsp</result>
+            
+        	<result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+
+            <result name="mainMenu" type="redirect-action">mainPage</result>
+            <result name="waitForSecond">/WEB-INF/pages/common/waitSeconds.jsp</result>
+            <result name="dataAccessFailure">/WEB-INF/pages/dataAccessFailure.jsp</result>
+            <result name="error">/WEB-INF/pages/mainMenu.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="org.springframework.dao.DataAccessException" result="dataAccessFailure"/>
+        </global-exception-mappings>
+
+<!-- 标准通用配置 开始-->
+<!-- 命名规则：处理器_对象_操作_角色 -->
+<!-- 操作：edit编辑；add增加；delete删除；list列表； err错误处理；comfirm确认-->
+<!-- 普通权限 -->
+        <action name="*_*_*_Submit*_PUBLIC" class="{1}Action" method="{2}_{3}_Submit{4}_PUBLIC">
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_PUBLIC.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_err_PUBLIC.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_{3}_PUBLIC.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_PUBLIC" class="{1}Action" method="{2}_{3}_PUBLIC">
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_PUBLIC.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_edit_PUBLIC.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_err_PUBLIC.jsp</result>
+            <result name="password">/WEB-INF/pages/{1}/{2}_{3}_password_PUBLIC.jsp</result>
+            <result name="comfirm">/WEB-INF/pages/{1}/{2}_{3}_comfirm_PUBLIC.jsp</result>
+            <result name="download">/WEB-INF/pages/common/downloadPage.jsp</result>
+            <result name="reserve1">/WEB-INF/pages/{1}/{2}_{3}_reserve1_PUBLIC.jsp</result>
+            <result name="reserve2">/WEB-INF/pages/{1}/{2}_{3}_reserve2_PUBLIC.jsp</result>
+            <result name="reserve3">/WEB-INF/pages/{1}/{2}_{3}_reserve3_PUBLIC.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+
+<!-- 所有者权限 -->
+        <action name="*_*_*_Submit*_AUTHOR" class="{1}Action" method="{2}_{3}_Submit{4}_AUTHOR">
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_AUTHOR.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_err_AUTHOR.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_{3}_AUTHOR.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_AUTHOR" class="{1}Action" method="{2}_{3}_AUTHOR">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <param name="auth_owners">ROLE_ADMINCONTEST,ROLE_CONTEST_HOLDER,ROLE_USER</param>
+            <param name="auth_objectIdKeyName">{2}Id</param>
+            <param name="auth_objectType">{2}</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_AUTHOR.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_edit_AUTHOR.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_err_AUTHOR.jsp</result>
+            <result name="password">/WEB-INF/pages/{1}/{2}_{3}_password_AUTHOR.jsp</result>
+            <result name="comfirm">/WEB-INF/pages/{1}/{2}_{3}_comfirm_AUTHOR.jsp</result>
+            <result name="download">/WEB-INF/pages/common/downloadPage.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+<!-- 系统管理员权限 -->
+        <action name="*_*_*_Submit*_ADMIN" class="{1}Action" method="{2}_{3}_Submit{4}_ADMIN">
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_ADMIN.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_err_ADMIN.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_{3}_ADMIN.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_ADMIN" class="{1}Action" method="{2}_{3}_ADMIN">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_ADMIN.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_edit_ADMIN.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_err_ADMIN.jsp</result>
+            <result name="password">/WEB-INF/pages/{1}/{2}_{3}_password_ADMIN.jsp</result>
+            <result name="comfirm">/WEB-INF/pages/{1}/{2}_{3}_comfirm_ADMIN.jsp</result>
+            <result name="download">/WEB-INF/pages/common/downloadPage.jsp</result>
+            <result name="reserve1">/WEB-INF/pages/{1}/{2}_{3}_reserve1_ADMIN.jsp</result>
+            <result name="reserve2">/WEB-INF/pages/{1}/{2}_{3}_reserve2_ADMIN.jsp</result>
+            <result name="reserve3">/WEB-INF/pages/{1}/{2}_{3}_reserve3_ADMIN.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+<!-- 特殊权限(系统管理员及指定角色有权) -->
+        <action name="*_*_*_Submit*_*_*_*_*_*_ROLES" class="{1}Action" method="{2}_{3}_Submit{4}_{5}_{6}_{7}_{8}_{9}_ROLES">
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_{5}_{6}_{7}_{8}_{9}_ROLES.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_err_{5}_{6}_{7}_{8}_{9}_ROLES.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_{3}_{5}_{6}_{7}_{8}_{9}_ROLES.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_Submit*_*_*_*_*_ROLES" class="{1}Action" method="{2}_{3}_Submit{4}_{5}_{6}_{7}_{8}_ROLES">
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_{5}_{6}_{7}_{8}_ROLES.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_err_{5}_{6}_{7}_{8}_ROLES.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_{3}_{5}_{6}_{7}_{8}_ROLES.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_Submit*_*_*_*_ROLES" class="{1}Action" method="{2}_{3}_Submit{4}_{5}_{6}_{7}_ROLES">
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_{5}_{6}_{7}_ROLES.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_err_{5}_{6}_{7}_ROLES.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_{3}_{5}_{6}_{7}_ROLES.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_Submit*_*_*_ROLES" class="{1}Action" method="{2}_{3}_Submit{4}_{5}_{6}_ROLES">
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_{5}_{6}_ROLES.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_err_{5}_{6}_ROLES.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_{3}_{5}_{6}_ROLES.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_Submit*_*_ROLES" class="{1}Action" method="{2}_{3}_Submit{4}_{5}_ROLES">
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_{5}_ROLES.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_Submit{4}_err_{5}_ROLES.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_{3}_{5}_ROLES.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_*_*_*_*_*_ROLES" class="{1}Action" method="{2}_{3}_{4}_{5}_{6}_{7}_{8}_ROLES">
+            <param name="auth_administrators">ROLE_ADMIN,ROLE_{4},ROLE_{5},ROLE_{6},ROLE_{7},ROLE_{8}</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_{4}_{5}_{6}_{7}_{8}_ROLES.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_edit_{4}_{5}_{6}_{7}_{8}_ROLES.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_err_{4}_{5}_{6}_{7}_{8}_ROLES.jsp</result>
+            <result name="password">/WEB-INF/pages/{1}/{2}_{3}_password_{4}_{5}_{6}_{7}_{8}_ROLES.jsp</result>
+            <result name="comfirm">/WEB-INF/pages/{1}/{2}_{3}_comfirm_ADMIN.jsp</result>
+            <result name="download">/WEB-INF/pages/common/downloadPage.jsp</result>
+            <result name="reserve1">/WEB-INF/pages/{1}/{2}_{3}_reserve1_{4}_{5}_{6}_{7}_{8}_ROLES.jsp</result>
+            <result name="reserve2">/WEB-INF/pages/{1}/{2}_{3}_reserve2_{4}_{5}_{6}_{7}_{8}_ROLES.jsp</result>
+            <result name="reserve3">/WEB-INF/pages/{1}/{2}_{3}_reserve3_{4}_{5}_{6}_{7}_{8}_ROLES.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_*_*_*_*_ROLES" class="{1}Action" method="{2}_{3}_{4}_{5}_{6}_{7}_ROLES">
+            <param name="auth_administrators">ROLE_ADMIN,ROLE_{4},ROLE_{5},ROLE_{6},ROLE_{7}</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_{4}_{5}_{6}_{7}_ROLES.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_edit_{4}_{5}_{6}_{7}_ROLES.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_err_{4}_{5}_{6}_{7}_ROLES.jsp</result>
+            <result name="password">/WEB-INF/pages/{1}/{2}_{3}_password_{4}_{5}_{6}_{7}_ROLES.jsp</result>
+            <result name="comfirm">/WEB-INF/pages/{1}/{2}_{3}_comfirm_{4}_{5}_{6}_{7}_ROLES.jsp</result>
+            <result name="download">/WEB-INF/pages/common/downloadPage.jsp</result>
+            <result name="reserve1">/WEB-INF/pages/{1}/{2}_{3}_reserve1_{4}_{5}_{6}_{7}_ROLES.jsp</result>
+            <result name="reserve2">/WEB-INF/pages/{1}/{2}_{3}_reserve2_{4}_{5}_{6}_{7}_ROLES.jsp</result>
+            <result name="reserve3">/WEB-INF/pages/{1}/{2}_{3}_reserve3_{4}_{5}_{6}_{7}_ROLES.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_*_*_*_ROLES" class="{1}Action" method="{2}_{3}_{4}_{5}_{6}_ROLES">
+            <param name="auth_administrators">ROLE_ADMIN,ROLE_{4},ROLE_{5},ROLE_{6}</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_{4}_{5}_{6}_ROLES.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_edit_{4}_{5}_{6}_ROLES.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_err_{4}_{5}_{6}_ROLES.jsp</result>
+            <result name="password">/WEB-INF/pages/{1}/{2}_{3}_password_{4}_{5}_{6}_ROLES.jsp</result>
+            <result name="comfirm">/WEB-INF/pages/{1}/{2}_{3}_comfirm_{4}_{5}_{6}_ROLES.jsp</result>
+            <result name="download">/WEB-INF/pages/common/downloadPage.jsp</result>
+            <result name="reserve1">/WEB-INF/pages/{1}/{2}_{3}_reserve1_{4}_{5}_{6}_ROLES.jsp</result>
+            <result name="reserve2">/WEB-INF/pages/{1}/{2}_{3}_reserve2_{4}_{5}_{6}_ROLES.jsp</result>
+            <result name="reserve3">/WEB-INF/pages/{1}/{2}_{3}_reserve3_{4}_{5}_{6}_ROLES.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_*_*_ROLES" class="{1}Action" method="{2}_{3}_{4}_{5}_ROLES">
+            <param name="auth_administrators">ROLE_ADMIN,ROLE_{4},ROLE_{5}</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_{4}_{5}_ROLES.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_edit_{4}_{5}_ROLES.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_err_{4}_{5}_ROLES.jsp</result>
+            <result name="password">/WEB-INF/pages/{1}/{2}_{3}_password_{4}_{5}_ROLES.jsp</result>
+            <result name="comfirm">/WEB-INF/pages/{1}/{2}_{3}_comfirm_{4}_{5}_ROLES.jsp</result>
+            <result name="download">/WEB-INF/pages/common/downloadPage.jsp</result>
+            <result name="reserve1">/WEB-INF/pages/{1}/{2}_{3}_reserve1_{4}_{5}_ROLES.jsp</result>
+            <result name="reserve2">/WEB-INF/pages/{1}/{2}_{3}_reserve2_{4}_{5}_ROLES.jsp</result>
+            <result name="reserve3">/WEB-INF/pages/{1}/{2}_{3}_reserve3_{4}_{5}_ROLES.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+        <action name="*_*_*_*_ROLES" class="{1}Action" method="{2}_{3}_{4}_ROLES">
+            <param name="auth_administrators">ROLE_ADMIN,ROLE_{4}</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/{1}/{2}_{3}_{4}_ROLES.jsp</result>
+            <result name="input">/WEB-INF/pages/{1}/{2}_edit_{4}_ROLES.jsp</result>
+            <result name="error">/WEB-INF/pages/{1}/{2}_{3}_err_{4}_ROLES.jsp</result>
+            <result name="password">/WEB-INF/pages/{1}/{2}_{3}_password_{4}_ROLES.jsp</result>
+            <result name="comfirm">/WEB-INF/pages/{1}/{2}_{3}_comfirm_{4}_ROLES.jsp</result>
+            <result name="download">/WEB-INF/pages/common/downloadPage.jsp</result>
+            <result name="reserve1">/WEB-INF/pages/{1}/{2}_{3}_reserve1_{4}_ROLES.jsp</result>
+            <result name="reserve2">/WEB-INF/pages/{1}/{2}_{3}_reserve2_{4}_ROLES.jsp</result>
+            <result name="reserve3">/WEB-INF/pages/{1}/{2}_{3}_reserve3_{4}_ROLES.jsp</result>
+            <result name="mainPage">/WEB-INF/pages/mainPage.jsp</result>
+        </action>
+<!-- 标准通用配置 结束 -->
+        <action name="showApplicationConfig" class="adminAction" method="showApplicationConfig">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/admin/applicationConfigForm.jsp</result>
+        </action>
+        
+        <action name="updateApplicationConfig" class="adminAction" method="updateApplicationConfig">
+            <param name="auth_administrators">ROLE_ADMIN</param>
+            <interceptor-ref name="userRightCheck"/>
+            <result name="success">/WEB-INF/pages/admin/applicationConfigForm.jsp</result>
+        </action>
+        
+        <action name="mainMenu" class="portalAction" method="mainPage">
+            <result name="success">/WEB-INF/pages/mainFrame.jsp</result>
+        </action>
+
+        <action name="blog" class="portalAction">
+            <result name="success">/WEB-INF/pages/blog.jsp</result>
+        </action>
+
+        <action name="header" class="portalAction">
+            <result name="success">/common/header.jsp</result>
+        </action>
+
+        <action name="lefter" class="portalAction">
+            <result name="success">/common/lefter.jsp</result>
+        </action>
+
+        <action name="footer" class="portalAction">
+            <result name="success">/common/footer.jsp</result>
+        </action>
+
+        <action name="signup" class="signupAction">
+            <result name="cancel" type="redirect">/</result>
+            <result name="input">/WEB-INF/pages/signup.jsp</result>
+            <result name="success" type="chain">saveSignup</result>
+        </action>
+
+        <action name="saveSignup" class="signupAction" method="save">
+            <result name="cancel" type="redirect">/</result>
+            <result name="input">/WEB-INF/pages/signup.jsp</result>
+            <result name="success">/</result>
+        </action>
+
+        <action name="activeAccount" class="signupAction" method="activeAccount">
+            <result name="error" type="redirect">/</result>
+            <result name="input">/WEB-INF/pages/signup.jsp</result>
+            <result name="success">/WEB-INF/pages/mainMenu.jsp</result>
+        </action>
+
+        <action name="fetchUserAccountCode" class="signupAction" method="fetchUserAccountCode">
+            <result name="error" type="redirect">/</result>
+            <result name="input">/WEB-INF/pages/signup.jsp</result>
+            <result name="success">/WEB-INF/pages/mainMenu.jsp</result>
+        </action>
+
+        <action name="editProfile" class="userAction" method="edit">
+            <result name="success">/WEB-INF/pages/common/userForm.jsp</result>
+            <result name="error">/WEB-INF/pages/mainMenu.jsp</result>
+        </action>
+
+        <action name="passwordHint" class="passwordHintAction">
+            <result name="input">/</result>
+            <result name="success">/</result>
+        </action>
+
+        <!-- Add additional actions here -->
+    </package>
+
+</struts>
